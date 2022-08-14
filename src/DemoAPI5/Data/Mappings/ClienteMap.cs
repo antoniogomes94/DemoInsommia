@@ -30,7 +30,7 @@ namespace DemoAPI5.Data.Mappings
               .HasColumnType("NVARCHAR")
               .HasMaxLength(14);
 
-            builder.Property(x => x.Senha)
+            builder.Property(x => x.Email)
               .IsRequired()
               .HasColumnType("NVARCHAR")
               .HasMaxLength(50);

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoAPI5.Migrations
 {
     [DbContext(typeof(DemoDataContext))]
-    [Migration("20220814222137_CriacaoDB")]
+    [Migration("20220814225351_CriacaoDB")]
     partial class CriacaoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,16 +32,16 @@ namespace DemoAPI5.Migrations
                     b.Property<string>("DataCriacao")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(80)
                         .HasColumnType("NVARCHAR")
                         .HasColumnName("Name");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("NVARCHAR");
 
                     b.HasKey("Id");
 
