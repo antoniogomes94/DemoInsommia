@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoAPI5.Migrations
 {
     [DbContext(typeof(DemoDataContext))]
-    [Migration("20220814225351_CriacaoDB")]
+    [Migration("20220814233323_CriacaoDB")]
     partial class CriacaoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace DemoAPI5.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("NVARCHAR");
 
-                    b.Property<string>("DataCriacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")

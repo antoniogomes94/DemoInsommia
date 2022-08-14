@@ -16,7 +16,7 @@ namespace DemoAPI5.Migrations
                     Name = table.Column<string>(type: "NVARCHAR", maxLength: 80, nullable: false),
                     CPF = table.Column<string>(type: "NVARCHAR", maxLength: 14, nullable: false),
                     Email = table.Column<string>(type: "NVARCHAR", maxLength: 50, nullable: false),
-                    DataCriacao = table.Column<string>(type: "TEXT", nullable: true)
+                    DataCriacao = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

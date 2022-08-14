@@ -1,4 +1,6 @@
-﻿namespace DemoAPI5.Models
+﻿using System;
+
+namespace DemoAPI5.Models
 {
     public class Cliente
     {
@@ -6,6 +8,6 @@
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string Email { get; set; }
-        public string DataCriacao { get; set; }
+        public DateTime DataCriacao { get; set; } = DateTime.Now;
     }
 }

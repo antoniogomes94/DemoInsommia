@@ -27,7 +27,7 @@ namespace DemoAPI5.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("NVARCHAR");
 
-                    b.Property<string>("DataCriacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
