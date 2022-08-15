@@ -20,7 +20,7 @@ namespace DemoAPI5.Services
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Role, user.Admin == true ? "Admin" : "Normal"),
+                new Claim(ClaimTypes.Role, user.Admin == true ? "admin" : "normal"),
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),
                 SigningCredentials = new SigningCredentials(

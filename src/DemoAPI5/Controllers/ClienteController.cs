@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DemoAPI5.Controllers
 {
     public class ClienteController : ControllerBase
     {
+        [Authorize]
         [HttpGet("/clientes")]
         public IActionResult Get([FromServices] DemoDataContext context)
         {
@@ -35,6 +37,7 @@ namespace DemoAPI5.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("/clientes")]
         public IActionResult Post([FromBody] ClienteInputModel model, [FromServices] DemoDataContext context)
         {
@@ -65,6 +68,7 @@ namespace DemoAPI5.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut("/clientes/{id:int}")]
         public IActionResult
             Put([FromRoute] int id, [FromBody] ClienteInputModel model, [FromServices] DemoDataContext context)
@@ -95,6 +99,7 @@ namespace DemoAPI5.Controllers
             }
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("/clientes/{id:int}")]
         public IActionResult
             Delete([FromRoute] int id, [FromServices] DemoDataContext context)
