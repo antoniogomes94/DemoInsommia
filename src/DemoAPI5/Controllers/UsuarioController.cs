@@ -12,7 +12,7 @@ namespace DemoAPI5.Controllers
     public class UsuarioController : ControllerBase
     {
         [HttpGet("/usuarios")]
-        public IActionResult Get([FromServices] DemoDataContext context)
+        public IActionResult Get([FromQuery]bool admin,[FromServices] DemoDataContext context)
         {
             try
             {
@@ -26,6 +26,9 @@ namespace DemoAPI5.Controllers
                      DataCriacao = u.DataCriacao,
                      Admin = u.Admin
                  }).ToList();
+
+                if (admin)
+                    usuariosViewModel = usuariosViewModel.Where(p => p.Admin == true).ToList();
 
                 return Ok(usuariosViewModel);
             }
