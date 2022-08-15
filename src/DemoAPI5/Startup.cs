@@ -1,4 +1,5 @@
 using DemoAPI5.Data;
+using DemoAPI5.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,6 +55,8 @@ namespace DemoAPI5
                 };
 
             });
+
+            services.AddTransient<TokenService>();
 
             services.AddSwaggerGen(c =>
             {
